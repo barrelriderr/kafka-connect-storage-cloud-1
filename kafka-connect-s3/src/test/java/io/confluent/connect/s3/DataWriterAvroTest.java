@@ -159,7 +159,7 @@ public class DataWriterAvroTest extends TestWithMockedS3 {
     task = new S3SinkTask(connectorConfig, context, storage, partitioner, format, SYSTEM_TIME);
 
     TestModel testModel = TestModel.newBuilder()
-        .setUserType(null)
+        .setUserType(UserType.ANONYMOUS)
         .build();
 
     SchemaAndValue schemaAndValue = format.getAvroData().toConnectData(TestModel.SCHEMA$, testModel);
